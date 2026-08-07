@@ -25,7 +25,6 @@
         "android.permission.ACCESS_FINE_LOCATION",
         "android.permission.READ_CONTACTS"
       ],
-      "googleServicesFile": "./google-services.json"
     },
     "plugins": [
       [
