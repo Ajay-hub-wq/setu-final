@@ -1,0 +1,51 @@
+{
+  "expo": {
+    "name": "SETU",
+    "slug": "setu",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "dark",
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#1A1207"
+    },
+    "android": {
+      "package": "com.setu.ultimate",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#1A1207"
+      },
+      "permissions": [
+        "android.permission.CAMERA",
+        "android.permission.RECORD_AUDIO",
+        "android.permission.READ_EXTERNAL_STORAGE",
+        "android.permission.WRITE_EXTERNAL_STORAGE",
+        "android.permission.ACCESS_FINE_LOCATION",
+        "android.permission.READ_CONTACTS"
+      ],
+      "googleServicesFile": "./google-services.json"
+    },
+    "plugins": [
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Allow SETU to use camera for calls and photos"
+        }
+      ],
+      [
+        "expo-contacts",
+        {
+          "contactsPermission": "Allow SETU to sync contacts"
+        }
+      ],
+      [
+        "expo-location",
+        {
+          "locationPermission": "Allow SETU to share location"
+        }
+      ]
+    ]
+  }
+}

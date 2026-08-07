@@ -1,0 +1,1 @@
+import React from 'react'; import { View, Text, StyleSheet } from 'react-native'; export default function CreateGroup(){ return <View style={s.c}><Text style={s.t}>Create Group - Supergroup 200k - Channel - Broadcast Unlimited</Text></View> } const s=StyleSheet.create({c:{flex:1,backgroundColor:'#0e0a05',justifyContent:'center',alignItems:'center'},t:{color:'#fff'}});
