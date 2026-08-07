@@ -17,6 +17,7 @@ jobs:
           java-version: '17'
       - uses: android-actions/setup-android@v3
       - name: Create dummy google-services.json
+
         run: |
           echo '{"project_info":{"project_number":"965507594614","project_id":"setu-ultimate"},"client":[{"client_info":{"mobilesdk_app_id":"1:965507594614:android:123","android_client_info":{"package_name":"com.setu.ultimate"}},"api_key":[{"current_key":"AIzaSyBPcRhvFp0Z3xoXM1CtPDsC3cGz-dS2R94"}]}]}' > google-services.json
       - run: npm install --legacy-peer-deps
