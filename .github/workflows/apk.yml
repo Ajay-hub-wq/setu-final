@@ -10,12 +10,21 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 18
-      - uses: actions/setup-java@v5
+      - uses: actions/setup-java@v4
         with:
           distribution: 'temurin'
           java-version: '17'
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v3
+      - name: Create google-services
+        run: |
+          echo '{"project_info":{"project_number":"965507594614","project_id":"setu-ultimate"},"client":[{"client_info":{"mobilesdk_app_id":"1:965507594614:android:123","android_client_info":{"package_name":"com.setu.ultimate"}},"api_key":[{"current_key":"AIzaSyBPcRhvFp0Z3xoXM1CtPDsC3cGz-dS2R94"}]}]}' > google-services.json
       - run: npm install --legacy-peer-deps
-      - run: npx expo prebuild --platform android --no-install
+      - run: npx expo prebuild --platform android --no-install --clean
+      - name: Fix Gradle 8.6 - This fixes your 'release' error
+        run: |
+          sed -i 's/gradle-.*-all.zip/gradle-8.6-all.zip/' android/gradle/wrapper/gradle-wrapper.properties
+          echo "sdk.dir=$ANDROID_SDK_ROOT" > android/local.properties
       - run: cd android && chmod +x gradlew && ./gradlew assembleDebug
       - uses: actions/upload-artifact@v4
         with:
